@@ -1,0 +1,45 @@
+2026-08-10 17:01:43.345 | INFO     | request_id - 1 | app.agent.nodess.extract_keywords:extract_keywords:28 - 抽取关键字:['华北地区', '统计', '统计华北地区销售总额', '销售总额']
+2026-08-10 17:03:42.799 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['销售总额', '统计', '华北地区', '统计华北地区销售总额']
+2026-08-10 17:05:09.596 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['统计', '统计华北地区销售总额', '华北地区', '销售总额']
+2026-08-10 17:09:35.406 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['统计', '销售总额', '华北地区', '统计华北地区销售总额']
+2026-08-10 17:10:33.529 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['华北地区', '销售总额', '统计华北地区销售总额', '统计']
+2026-08-10 17:15:26.977 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['统计', '华北地区', '销售总额', '统计华北地区销售总额']
+2026-08-10 17:19:31.224 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['华北地区', '统计', '销售总额', '统计华北地区销售总额']
+2026-08-10 17:20:28.211 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['销售总额', '统计华北地区销售总额', '华北地区', '统计']
+2026-08-12 15:13:13.377 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['统计2025年各地区销售总额', '销售总额', '地区', '统计']
+2026-08-12 15:13:13.400 | ERROR    | request_id - 1 | app.agent.nodes.recall_value:recall_value:40 - 召回字段取值异常：'keyworks'
+2026-08-12 15:15:13.259 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['地区', '销售总额', '统计', '统计2025年各地区销售总额']
+2026-08-12 15:15:32.117 | ERROR    | request_id - 1 | app.agent.nodes.recall_value:recall_value:40 - 召回字段取值异常：Connection timed out
+2026-08-12 15:21:15.609 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['统计2025年各地区销售总额', '统计', '地区', '销售总额']
+2026-08-12 15:21:20.264 | INFO     | request_id - 1 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-08-12 15:21:31.494 | INFO     | request_id - 1 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['fact_order.order_amount', 'fact_order.order_quantity', 'dim_region.region_name', 'dim_region.province', 'dim_region.country', 'dim_date.year', 'dim_date.month']
+2026-08-12 15:21:32.640 | INFO     | request_id - 1 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-08-12 15:21:32.642 | ERROR    | request_id - 1 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:69 - 合并召回信息异常:select() missing 1 required positional argument: 'choicelist'
+2026-08-12 15:26:12.697 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['统计', '统计2025年各地区销售总额', '地区', '销售总额']
+2026-08-12 15:26:16.205 | INFO     | request_id - 1 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-08-12 15:26:20.150 | INFO     | request_id - 1 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['fact_order.order_quantity', 'fact_order.order_amount', 'fact_order.date_id', 'dim_date.date_id', 'dim_region.region_name', 'dim_region.province', 'dim_region.country']
+2026-08-12 15:26:21.507 | INFO     | request_id - 1 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-08-12 15:26:25.059 | INFO     | request_id - 1 | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-08-12 15:26:27.902 | INFO     | request_id - 1 | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['fact_order', 'dim_date', 'dim_region']
+2026-08-12 15:26:27.923 | INFO     | request_id - 1 | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-08-12', 'weekday': 'Wednesday', 'quarter': 'Q3'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-08-12 15:26:30.298 | INFO     | request_id - 1 | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT r.region_name, SUM(f.order_amount) AS total_sales
+FROM fact_order f
+JOIN dim_region r ON f.region_id = r.region_id
+JOIN dim_date d ON f.date_id = d.date_id
+WHERE d.date_id BETWEEN 20250101 AND 20251231
+GROUP BY r.region_name;
+2026-08-12 15:26:30.308 | INFO     | request_id - 1 | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT r.region_name, SUM(f.order_amount) AS total_sales
+FROM fact_order f
+JOIN dim_region r ON f.region_id = r.region_id
+JOIN dim_date d ON f.date_id = d.date_id
+WHERE d.date_id BETWEEN 20250101 AND 20251231
+GROUP BY r.region_name;
+2026-08-12 15:26:44.532 | INFO     | request_id - 1 | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+ SELECT r.region_name, SUM(f.order_amount) AS total_sales
+FROM fact_order f
+JOIN dim_region r ON f.region_id = r.region_id
+JOIN dim_date d ON f.date_id = d.date_id
+WHERE d.date_id BETWEEN 20250101 AND 20251231
+GROUP BY r.region_name;
+2026-08-12 15:26:44.579 | INFO     | request_id - 1 | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'region_name': '华南', 'total_sales': 70202.0}, {'region_name': '华东', 'total_sales': 107373.0}, {'region_name': '华北', 'total_sales': 41099.5}, {'region_name': '西南', 'total_sales': 31528.0}, {'region_name': '华中', 'total_sales': 28957.0}]

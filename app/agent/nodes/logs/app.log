@@ -1,0 +1,11 @@
+
+2026-08-10 22:32:15.466 | INFO     | request_id - 1 | __main__:recall_column:66 - 召回字段信息:['fact_order.order_amount', 'fact_order.order_quantity', 'dim_region.region_name', 'dim_region.province', 'dim_region.country']
+2026-08-10 22:43:02.469 | INFO     | request_id - 1 | __main__:recall_metric:65 - 召回指标信息:['GMV', 'AOV']
+2026-08-11 10:52:27.241 | INFO     | request_id - 1 | __main__:recall_value:37 - 召回字段取值：['dim_region.province.广东省']
+2026-08-11 11:14:49.725 | INFO     | request_id - 1 | __main__:recall_column:40 - 召回字段信息：['dim_region.region_name', 'dim_region.province', 'dim_region.country', 'fact_order.order_amount', 'fact_order.order_quantity']
+2026-08-11 11:21:45.671 | INFO     | request_id - 1 | __main__:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-08-11 11:40:50.043 | INFO     | request_id - 1 | __main__:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-08-11 11:41:20.088 | INFO     | request_id - 1 | __main__:recall_column:40 - 召回字段信息：['dim_region.region_name', 'fact_order.order_amount', 'fact_order.order_quantity', 'dim_product.category']
+2026-08-11 13:11:11.659 | INFO     | request_id - 1 | __main__:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-08-12 15:06:37.071 | ERROR    | request_id - 1 | __main__:recall_column:43 - 召回字段信息异常Server error '502 Bad Gateway' for url 'http://localhost:8081'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502

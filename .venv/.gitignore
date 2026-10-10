@@ -1,0 +1,12 @@
+# Python虚拟环境
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# PyCharm配置文件夹
+.idea/
+# 日志、环境变量
+.env
+*.log

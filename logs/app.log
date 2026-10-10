@@ -1,0 +1,282 @@
+2026-08-06 10:47:15.340 | INFO     | request_id - 1 | __main__:build:12 - Building meta knowledge...
+2026-08-06 11:12:59.979 | INFO     | request_id - 1 | __main__:build:12 - Building meta knowledge...
+2026-08-06 11:13:09.434 | INFO     | request_id - 1 | __main__:build:12 - Building meta knowledge...
+2026-08-06 11:51:39.120 | INFO     | request_id - 1 | __main__:build:10 - Building meta knowledge...
+2026-08-06 11:52:42.135 | INFO     | request_id - 1 | __main__:build:10 - Building meta knowledge...
+2026-08-14 11:45:29.942 | INFO     | request_id - 2d2ac872-793b-4fe1-ade1-7f60bdf5a565 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['统计', '统计一下华北地区总销售额', '销售额', '华北地区']
+2026-08-14 11:45:34.343 | INFO     | request_id - 2d2ac872-793b-4fe1-ade1-7f60bdf5a565 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-08-14 11:45:45.492 | INFO     | request_id - 2d2ac872-793b-4fe1-ade1-7f60bdf5a565 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['dim_region.region_name', 'dim_region.province', 'dim_region.country', 'fact_order.order_quantity', 'fact_order.order_amount']
+2026-08-14 11:45:46.289 | INFO     | request_id - 2d2ac872-793b-4fe1-ade1-7f60bdf5a565 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-08-14 11:45:48.000 | INFO     | request_id - 2d2ac872-793b-4fe1-ade1-7f60bdf5a565 | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-08-14 11:45:48.599 | INFO     | request_id - 2d2ac872-793b-4fe1-ade1-7f60bdf5a565 | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['dim_region', 'fact_order']
+2026-08-14 11:45:48.615 | INFO     | request_id - 2d2ac872-793b-4fe1-ade1-7f60bdf5a565 | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-08-14', 'weekday': 'Friday', 'quarter': 'Q3'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-08-14 11:45:50.582 | INFO     | request_id - 2d2ac872-793b-4fe1-ade1-7f60bdf5a565 | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT SUM(f.order_amount) AS total_sales FROM fact_order f JOIN dim_region r ON f.region_id = r.region_id WHERE r.region_name = '华北';
+2026-08-14 11:45:50.590 | INFO     | request_id - 2d2ac872-793b-4fe1-ade1-7f60bdf5a565 | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT SUM(f.order_amount) AS total_sales FROM fact_order f JOIN dim_region r ON f.region_id = r.region_id WHERE r.region_name = '华北';
+2026-08-14 11:45:53.340 | INFO     | request_id - 2d2ac872-793b-4fe1-ade1-7f60bdf5a565 | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT SUM(f.order_amount) AS total_sales FROM fact_order f JOIN dim_region r ON f.region_id = r.region_id WHERE r.region_name = '华北';
+2026-08-14 11:45:53.357 | INFO     | request_id - 2d2ac872-793b-4fe1-ade1-7f60bdf5a565 | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'total_sales': 41099.5}]
+2026-08-14 11:47:54.171 | INFO     | request_id - ffcffdbc-1d86-4b19-9179-38bcb2a695c6 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['华南地区', '统计', '统计一下华南地区总销售额', '销售额']
+2026-08-14 11:47:56.940 | INFO     | request_id - ffcffdbc-1d86-4b19-9179-38bcb2a695c6 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['dim_region.region_name', 'dim_region.province', 'dim_region.country', 'fact_order.order_quantity', 'fact_order.order_amount']
+2026-08-14 11:47:57.948 | INFO     | request_id - ffcffdbc-1d86-4b19-9179-38bcb2a695c6 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：['dim_region.region_name.华南']
+2026-08-14 11:47:57.976 | INFO     | request_id - ffcffdbc-1d86-4b19-9179-38bcb2a695c6 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-08-14 11:47:59.137 | INFO     | request_id - ffcffdbc-1d86-4b19-9179-38bcb2a695c6 | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-08-14 11:47:59.712 | INFO     | request_id - ffcffdbc-1d86-4b19-9179-38bcb2a695c6 | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['dim_region', 'fact_order']
+2026-08-14 11:47:59.716 | INFO     | request_id - ffcffdbc-1d86-4b19-9179-38bcb2a695c6 | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-08-14', 'weekday': 'Friday', 'quarter': 'Q3'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-08-14 11:48:01.598 | INFO     | request_id - ffcffdbc-1d86-4b19-9179-38bcb2a695c6 | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT SUM(fact_order.order_amount) AS total_sales FROM fact_order JOIN dim_region ON fact_order.region_id = dim_region.region_id WHERE dim_region.region_name = '华南';
+2026-08-14 11:48:01.600 | INFO     | request_id - ffcffdbc-1d86-4b19-9179-38bcb2a695c6 | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT SUM(fact_order.order_amount) AS total_sales FROM fact_order JOIN dim_region ON fact_order.region_id = dim_region.region_id WHERE dim_region.region_name = '华南';
+2026-08-14 11:48:33.665 | INFO     | request_id - ffcffdbc-1d86-4b19-9179-38bcb2a695c6 | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+/* */SELECT SUM(fact_order.order_amount) AS total_sales FROM fact_order JOIN dim_region ON fact_order.region_id = dim_region.region_id WHERE dim_region.region_name = '华南';
+2026-08-14 11:48:33.672 | INFO     | request_id - ffcffdbc-1d86-4b19-9179-38bcb2a695c6 | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'total_sales': 70202.0}]
+2026-08-14 12:01:19.121 | INFO     | request_id - 394293fb-190f-4fff-b95b-5bdd1b77b732 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['统计', '销售额', '地区', '统计一下各地区前三销售额']
+2026-08-14 12:01:30.859 | INFO     | request_id - 394293fb-190f-4fff-b95b-5bdd1b77b732 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['fact_order.order_quantity', 'fact_order.order_amount', 'dim_region.region_name', 'dim_region.province', 'dim_region.country']
+2026-08-14 12:01:50.653 | INFO     | request_id - 394293fb-190f-4fff-b95b-5bdd1b77b732 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：['dim_product.brand.三星']
+2026-08-14 12:02:09.367 | INFO     | request_id - 394293fb-190f-4fff-b95b-5bdd1b77b732 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-08-14 12:02:11.131 | INFO     | request_id - 394293fb-190f-4fff-b95b-5bdd1b77b732 | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-08-14 12:02:11.197 | INFO     | request_id - 394293fb-190f-4fff-b95b-5bdd1b77b732 | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['fact_order', 'dim_region']
+2026-08-14 12:02:11.204 | INFO     | request_id - 394293fb-190f-4fff-b95b-5bdd1b77b732 | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-08-14', 'weekday': 'Friday', 'quarter': 'Q3'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-08-14 12:02:14.809 | INFO     | request_id - 394293fb-190f-4fff-b95b-5bdd1b77b732 | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT r.region_name AS 地区, SUM(o.order_amount) AS 销售额 FROM fact_order o JOIN dim_region r ON o.region_id = r.region_id GROUP BY r.region_name ORDER BY 销售额 DESC LIMIT 3
+2026-08-14 12:02:14.824 | INFO     | request_id - 394293fb-190f-4fff-b95b-5bdd1b77b732 | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT r.region_name AS 地区, SUM(o.order_amount) AS 销售额 FROM fact_order o JOIN dim_region r ON o.region_id = r.region_id GROUP BY r.region_name ORDER BY 销售额 DESC LIMIT 3
+2026-08-14 12:02:19.909 | INFO     | request_id - 394293fb-190f-4fff-b95b-5bdd1b77b732 | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT r.region_name AS 地区, SUM(o.order_amount) AS 销售额 FROM fact_order o JOIN dim_region r ON o.region_id = r.region_id GROUP BY r.region_name ORDER BY 销售额 DESC LIMIT 3
+2026-08-14 12:02:19.944 | INFO     | request_id - 394293fb-190f-4fff-b95b-5bdd1b77b732 | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'地区': '华东', '销售额': 107373.0}, {'地区': '华南', '销售额': 70202.0}, {'地区': '华北', '销售额': 41099.5}]
+2026-08-14 22:15:59.783 | INFO     | request_id - 32f54f62-d790-49d6-9aeb-b1c07c5bba76 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['华南地区', '统计', '统计一下华南地区总销售额', '销售额']
+2026-08-14 22:16:04.484 | INFO     | request_id - 32f54f62-d790-49d6-9aeb-b1c07c5bba76 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-08-14 22:16:14.930 | INFO     | request_id - 32f54f62-d790-49d6-9aeb-b1c07c5bba76 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['dim_region.region_name', 'dim_region.province', 'dim_region.country', 'fact_order.order_quantity', 'fact_order.order_amount']
+2026-08-14 22:16:16.116 | INFO     | request_id - 32f54f62-d790-49d6-9aeb-b1c07c5bba76 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-08-14 22:16:17.854 | INFO     | request_id - 32f54f62-d790-49d6-9aeb-b1c07c5bba76 | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-08-14 22:16:18.368 | INFO     | request_id - 32f54f62-d790-49d6-9aeb-b1c07c5bba76 | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['dim_region', 'fact_order']
+2026-08-14 22:16:18.387 | INFO     | request_id - 32f54f62-d790-49d6-9aeb-b1c07c5bba76 | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-08-14', 'weekday': 'Friday', 'quarter': 'Q3'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-08-14 22:16:19.931 | INFO     | request_id - 32f54f62-d790-49d6-9aeb-b1c07c5bba76 | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT SUM(f.order_amount) AS total_sales FROM fact_order f JOIN dim_region r ON f.region_id = r.region_id WHERE r.region_name = '华南';
+2026-08-14 22:16:19.938 | INFO     | request_id - 32f54f62-d790-49d6-9aeb-b1c07c5bba76 | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT SUM(f.order_amount) AS total_sales FROM fact_order f JOIN dim_region r ON f.region_id = r.region_id WHERE r.region_name = '华南';
+2026-08-14 22:16:22.194 | INFO     | request_id - 32f54f62-d790-49d6-9aeb-b1c07c5bba76 | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT SUM(f.order_amount) AS total_sales FROM fact_order f JOIN dim_region r ON f.region_id = r.region_id WHERE r.region_name = '华南';
+2026-08-14 22:16:22.211 | INFO     | request_id - 32f54f62-d790-49d6-9aeb-b1c07c5bba76 | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'total_sales': 70202.0}]
+2026-08-17 11:38:03.986 | INFO     | request_id - 491ee651-8577-4d17-a392-0078700f61ba | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['统计', '华北地区', '华北地区销售额统计一下上个月的', '销售额']
+2026-08-17 11:38:21.214 | ERROR    | request_id - 491ee651-8577-4d17-a392-0078700f61ba | app.agent.nodes.recall_value:recall_value:40 - 召回字段取值异常：Connection timed out
+2026-08-17 11:39:53.398 | INFO     | request_id - 23f4c764-9ab0-4d5c-abd9-f1a90458cd81 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['统计', '华北地区', '统计一下华北地区上个月的销售额', '销售额']
+2026-08-17 11:39:55.262 | ERROR    | request_id - 23f4c764-9ab0-4d5c-abd9-f1a90458cd81 | app.agent.nodes.recall_metric:recall_metric:40 - 召回指标信息异常：Server error '502 Bad Gateway' for url 'http://localhost:8081'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-08-17 11:40:02.771 | INFO     | request_id - b8220e21-60f0-460c-a9cb-bdb0aa64c0ec | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['统计', '华北地区', '统计一下华北地区上个月的销售额', '销售额']
+2026-08-17 11:40:04.743 | ERROR    | request_id - b8220e21-60f0-460c-a9cb-bdb0aa64c0ec | app.agent.nodes.recall_column:recall_column:43 - 召回字段信息异常Server error '502 Bad Gateway' for url 'http://localhost:8081'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-08-17 12:15:27.050 | INFO     | request_id - 655ba112-5a8b-4f7b-b199-5a50a9b07438 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['销售额', '统计一下华北地区销售额', '华北地区', '统计']
+2026-08-17 12:15:29.868 | INFO     | request_id - 655ba112-5a8b-4f7b-b199-5a50a9b07438 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-08-17 12:15:44.556 | INFO     | request_id - 655ba112-5a8b-4f7b-b199-5a50a9b07438 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['dim_region.region_name', 'dim_region.province', 'dim_region.country', 'fact_order.order_amount', 'fact_order.order_quantity']
+2026-08-17 12:15:45.451 | INFO     | request_id - 655ba112-5a8b-4f7b-b199-5a50a9b07438 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-08-17 12:15:47.075 | INFO     | request_id - 655ba112-5a8b-4f7b-b199-5a50a9b07438 | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-08-17 12:15:48.008 | INFO     | request_id - 655ba112-5a8b-4f7b-b199-5a50a9b07438 | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['dim_region', 'fact_order']
+2026-08-17 12:15:48.035 | INFO     | request_id - 655ba112-5a8b-4f7b-b199-5a50a9b07438 | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-08-17', 'weekday': 'Monday', 'quarter': 'Q3'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-08-17 12:15:49.685 | INFO     | request_id - 655ba112-5a8b-4f7b-b199-5a50a9b07438 | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT SUM(f.order_amount) AS sales FROM fact_order f JOIN dim_region r ON f.region_id = r.region_id WHERE r.region_name = '华北';
+2026-08-17 12:15:49.694 | INFO     | request_id - 655ba112-5a8b-4f7b-b199-5a50a9b07438 | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT SUM(f.order_amount) AS sales FROM fact_order f JOIN dim_region r ON f.region_id = r.region_id WHERE r.region_name = '华北';
+2026-08-17 12:15:51.917 | INFO     | request_id - 655ba112-5a8b-4f7b-b199-5a50a9b07438 | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT SUM(f.order_amount) AS sales FROM fact_order f JOIN dim_region r ON f.region_id = r.region_id WHERE r.region_name = '华北';
+2026-08-17 12:15:51.943 | INFO     | request_id - 655ba112-5a8b-4f7b-b199-5a50a9b07438 | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'sales': 41099.5}]
+2026-10-09 22:38:37.637 | INFO     | request_id - 83263ffb-579c-40dd-b7be-378a57e2e8f3 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询上个月总销售额', '查询', '销售额']
+2026-10-09 22:38:38.217 | ERROR    | request_id - 83263ffb-579c-40dd-b7be-378a57e2e8f3 | app.agent.nodes.recall_metric:recall_metric:40 - 召回指标信息异常：Error code: 403 - {'error': {'type': 'permission_error', 'code': '403001', 'message': 'The package is disabled or you do not have invocation permission. Please check the package status in the console.', 'message_zh': '套餐包被禁用或无调用权限，请前往控制台查看套餐包状态。', 'source': 'gateway', 'request_id': '976370f9-a2e4-4f1f-bb90-0ec18645eed9'}}
+2026-10-09 22:49:44.634 | INFO     | request_id - b43e1a9b-7b53-4208-8f26-8417450eec17 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询上个月总销售额', '销售额', '查询']
+2026-10-09 22:49:45.122 | ERROR    | request_id - b43e1a9b-7b53-4208-8f26-8417450eec17 | app.agent.nodes.recall_column:recall_column:43 - 召回字段信息异常Error code: 403 - {'error': {'type': 'permission_error', 'code': '403001', 'message': 'The package is disabled or you do not have invocation permission. Please check the package status in the console.', 'message_zh': '套餐包被禁用或无调用权限，请前往控制台查看套餐包状态。', 'source': 'gateway', 'request_id': '575b0f5b-f7b2-49e1-86c9-1eee9c247437'}}
+2026-10-09 23:04:36.564 | INFO     | request_id - 6ec78283-30d3-4c73-b791-825aeae7369e | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询上个月总销售额', '查询', '销售额']
+2026-10-09 23:04:37.378 | ERROR    | request_id - 6ec78283-30d3-4c73-b791-825aeae7369e | app.agent.nodes.recall_value:recall_value:40 - 召回字段取值异常：Error code: 403 - {'error': {'type': 'permission_error', 'code': '403001', 'message': 'The package is disabled or you do not have invocation permission. Please check the package status in the console.', 'message_zh': '套餐包被禁用或无调用权限，请前往控制台查看套餐包状态。', 'source': 'gateway', 'request_id': 'bb51ac34-0dea-4798-9e49-90f9f76fd1c1'}}
+2026-10-09 23:11:10.411 | INFO     | request_id - 7f8d20d2-7cab-48e6-bf66-cd9a10459d16 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['销售额', '查询', '查询上个月总销售额']
+2026-10-09 23:11:11.515 | ERROR    | request_id - 7f8d20d2-7cab-48e6-bf66-cd9a10459d16 | app.agent.nodes.recall_column:recall_column:43 - 召回字段信息异常Error code: 403 - {'error': {'type': 'permission_error', 'code': '403001', 'message': 'The package is disabled or you do not have invocation permission. Please check the package status in the console.', 'message_zh': '套餐包被禁用或无调用权限，请前往控制台查看套餐包状态。', 'source': 'gateway', 'request_id': '14476cc1-e479-4709-a4be-88937dc0cda5'}}
+2026-10-09 23:11:11.515 | ERROR    | request_id - 7f8d20d2-7cab-48e6-bf66-cd9a10459d16 | app.agent.nodes.recall_value:recall_value:40 - 召回字段取值异常：Error code: 403 - {'error': {'type': 'permission_error', 'code': '403001', 'message': 'The package is disabled or you do not have invocation permission. Please check the package status in the console.', 'message_zh': '套餐包被禁用或无调用权限，请前往控制台查看套餐包状态。', 'source': 'gateway', 'request_id': 'f6661e51-8739-4944-a854-789ba5b911a6'}}
+2026-10-10 08:22:03.877 | INFO     | request_id - a7aa95fa-d7ce-439a-894e-9cc72fcf5bd7 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询', '销售额', '查询上个月总销售额']
+2026-10-10 08:22:04.482 | ERROR    | request_id - a7aa95fa-d7ce-439a-894e-9cc72fcf5bd7 | app.agent.nodes.recall_value:recall_value:40 - 召回字段取值异常：Error code: 403 - {'error': {'type': 'permission_error', 'code': '403001', 'message': 'The package is disabled or you do not have invocation permission. Please check the package status in the console.', 'message_zh': '套餐包被禁用或无调用权限，请前往控制台查看套餐包状态。', 'source': 'gateway', 'request_id': '945bb105-50e2-4bdd-9ffd-0df69c331b27'}}
+2026-10-10 08:32:35.636 | INFO     | request_id - ac2394b9-8797-4fcc-ae8e-fe279cd6e511 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询', '销售额', '查询上个月总销售额']
+2026-10-10 08:32:38.060 | ERROR    | request_id - ac2394b9-8797-4fcc-ae8e-fe279cd6e511 | app.agent.nodes.recall_metric:recall_metric:40 - 召回指标信息异常：Error code: 403 - {'error': {'type': 'permission_error', 'code': '403001', 'message': 'The package is disabled or you do not have invocation permission. Please check the package status in the console.', 'message_zh': '套餐包被禁用或无调用权限，请前往控制台查看套餐包状态。', 'source': 'gateway', 'request_id': 'b896e886-1dd6-4ec4-ad19-c5ff801a3968'}}
+2026-10-10 08:43:39.916 | INFO     | request_id - 376f6c90-3e6d-4a1a-be4b-943a8c8e4cfd | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询上个月总销售额', '查询', '销售额']
+2026-10-10 08:43:55.205 | INFO     | request_id - 376f6c90-3e6d-4a1a-be4b-943a8c8e4cfd | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['fact_order.order_amount', 'fact_order.order_quantity', 'dim_date.date_id', 'fact_order.date_id', 'dim_date.day']
+2026-10-10 08:43:56.048 | INFO     | request_id - 376f6c90-3e6d-4a1a-be4b-943a8c8e4cfd | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-10-10 08:44:12.574 | INFO     | request_id - 376f6c90-3e6d-4a1a-be4b-943a8c8e4cfd | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-10-10 08:44:12.820 | ERROR    | request_id - 376f6c90-3e6d-4a1a-be4b-943a8c8e4cfd | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:69 - 合并召回信息异常:'NoneType' object has no attribute 'name'
+2026-10-10 08:46:58.874 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询上个月总销售额', '销售额', '查询']
+2026-10-10 08:47:02.076 | INFO     | request_id - 1 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-10-10 08:47:04.170 | INFO     | request_id - 1 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['fact_order.order_amount', 'fact_order.order_quantity', 'dim_date.date_id', 'fact_order.date_id', 'dim_date.day']
+2026-10-10 08:47:05.292 | INFO     | request_id - 1 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-10-10 08:47:05.294 | ERROR    | request_id - 1 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:69 - 合并召回信息异常:'MysqlClientManager' object has no attribute 'execute'
+2026-10-10 08:49:03.873 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询', '查询上个月总销售额', '销售额']
+2026-10-10 08:49:06.280 | INFO     | request_id - 1 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-10-10 08:49:07.935 | INFO     | request_id - 1 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['dim_date.month', 'dim_date.year', 'fact_order.order_amount', 'fact_order.order_quantity']
+2026-10-10 08:49:08.599 | INFO     | request_id - 1 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-10-10 08:49:08.637 | ERROR    | request_id - 1 | app.agent.nodes.merge_retrieved_info:merge_retrieved_info:69 - 合并召回信息异常:'NoneType' object has no attribute 'name'
+2026-10-10 08:58:06.257 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:43 - 加载完成配置内容读取
+2026-10-10 08:58:06.766 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:46 - 保存表信息到meta数据库
+2026-10-10 08:58:32.258 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:48 - 为字段构建向量索引
+2026-10-10 08:58:32.311 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:50 - 为字段取值建立全文索引
+2026-10-10 08:58:32.312 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:53 - 保存指标信息到meta数据库
+2026-10-10 08:58:34.657 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:55 - 为指标信息构建向量索引
+2026-10-10 08:59:51.481 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:43 - 加载完成配置内容读取
+2026-10-10 08:59:51.600 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:46 - 保存表信息到meta数据库
+2026-10-10 09:00:32.170 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:48 - 为字段构建向量索引
+2026-10-10 09:00:32.217 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:50 - 为字段取值建立全文索引
+2026-10-10 09:00:32.217 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:53 - 保存指标信息到meta数据库
+2026-10-10 09:00:37.342 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:55 - 为指标信息构建向量索引
+2026-10-10 09:00:37.343 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:58 - meta数据库事务已提交
+2026-10-10 09:02:21.750 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:43 - 加载完成配置内容读取
+2026-10-10 09:02:21.860 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:46 - 保存表信息到meta数据库
+2026-10-10 09:02:43.124 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:48 - 为字段构建向量索引
+2026-10-10 09:02:43.176 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:50 - 为字段取值建立全文索引
+2026-10-10 09:02:43.176 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:53 - 保存指标信息到meta数据库
+2026-10-10 09:02:46.262 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:55 - 为指标信息构建向量索引
+2026-10-10 09:02:46.380 | INFO     | request_id - 1 | app.services.meta_knowledge_service:build:58 - meta数据库事务已提交
+2026-10-10 09:05:00.739 | INFO     | request_id - 1 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询上个月总销售额', '查询', '销售额']
+2026-10-10 09:05:04.335 | INFO     | request_id - 1 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-10-10 09:05:14.159 | INFO     | request_id - 1 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['fact_order.order_amount', 'fact_order.order_quantity', 'fact_order.date_id', 'dim_date.date_id']
+2026-10-10 09:05:15.274 | INFO     | request_id - 1 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-10-10 09:05:17.281 | INFO     | request_id - 1 | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-10-10 09:05:25.161 | INFO     | request_id - 1 | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['fact_order']
+2026-10-10 09:05:25.210 | INFO     | request_id - 1 | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-10-10', 'weekday': 'Saturday', 'quarter': 'Q4'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-10-10 09:05:27.503 | INFO     | request_id - 1 | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT SUM(order_amount) AS GMV FROM fact_order WHERE date_id BETWEEN 20260901 AND 20260930
+2026-10-10 09:05:27.515 | INFO     | request_id - 1 | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT SUM(order_amount) AS GMV FROM fact_order WHERE date_id BETWEEN 20260901 AND 20260930
+2026-10-10 09:05:29.538 | INFO     | request_id - 1 | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT SUM(order_amount) AS GMV FROM fact_order WHERE date_id BETWEEN 20260901 AND 20260930
+2026-10-10 09:05:29.551 | INFO     | request_id - 1 | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'GMV': None}]
+2026-10-10 09:09:02.745 | INFO     | request_id - 2b29f287-41ff-4c2d-8c60-3cc1ce11ad2c | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询上个月总销售额', '销售额', '查询']
+2026-10-10 09:09:04.229 | INFO     | request_id - 2b29f287-41ff-4c2d-8c60-3cc1ce11ad2c | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-10-10 09:09:10.786 | INFO     | request_id - 2b29f287-41ff-4c2d-8c60-3cc1ce11ad2c | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['fact_order.order_amount', 'fact_order.order_quantity', 'fact_order.date_id', 'dim_date.date_id']
+2026-10-10 09:09:11.269 | INFO     | request_id - 2b29f287-41ff-4c2d-8c60-3cc1ce11ad2c | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-10-10 09:09:12.499 | INFO     | request_id - 2b29f287-41ff-4c2d-8c60-3cc1ce11ad2c | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-10-10 09:09:19.535 | INFO     | request_id - 2b29f287-41ff-4c2d-8c60-3cc1ce11ad2c | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['fact_order', 'dim_date']
+2026-10-10 09:09:19.557 | INFO     | request_id - 2b29f287-41ff-4c2d-8c60-3cc1ce11ad2c | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-10-10', 'weekday': 'Saturday', 'quarter': 'Q4'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-10-10 09:09:21.881 | INFO     | request_id - 2b29f287-41ff-4c2d-8c60-3cc1ce11ad2c | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT SUM(order_amount) AS total_sales FROM fact_order WHERE date_id BETWEEN 20260901 AND 20260930;
+2026-10-10 09:09:21.889 | INFO     | request_id - 2b29f287-41ff-4c2d-8c60-3cc1ce11ad2c | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT SUM(order_amount) AS total_sales FROM fact_order WHERE date_id BETWEEN 20260901 AND 20260930;
+2026-10-10 09:09:24.131 | INFO     | request_id - 2b29f287-41ff-4c2d-8c60-3cc1ce11ad2c | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT SUM(order_amount) AS total_sales FROM fact_order WHERE date_id BETWEEN 20260901 AND 20260930;
+2026-10-10 09:09:24.135 | INFO     | request_id - 2b29f287-41ff-4c2d-8c60-3cc1ce11ad2c | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'total_sales': None}]
+2026-10-10 09:15:09.885 | INFO     | request_id - 2e31d4de-1e11-4ada-809a-619cecec54a4 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['total', 'sales', 'total_sales是多少']
+2026-10-10 09:15:14.392 | INFO     | request_id - 2e31d4de-1e11-4ada-809a-619cecec54a4 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-10-10 09:15:19.314 | INFO     | request_id - 2e31d4de-1e11-4ada-809a-619cecec54a4 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['fact_order.order_amount', 'fact_order.order_quantity']
+2026-10-10 09:15:21.040 | INFO     | request_id - 2e31d4de-1e11-4ada-809a-619cecec54a4 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-10-10 09:15:22.214 | INFO     | request_id - 2e31d4de-1e11-4ada-809a-619cecec54a4 | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-10-10 09:15:22.286 | INFO     | request_id - 2e31d4de-1e11-4ada-809a-619cecec54a4 | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['fact_order']
+2026-10-10 09:15:22.299 | INFO     | request_id - 2e31d4de-1e11-4ada-809a-619cecec54a4 | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-10-10', 'weekday': 'Saturday', 'quarter': 'Q4'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-10-10 09:15:23.428 | INFO     | request_id - 2e31d4de-1e11-4ada-809a-619cecec54a4 | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT SUM(order_amount) AS total_sales FROM fact_order
+2026-10-10 09:15:23.433 | INFO     | request_id - 2e31d4de-1e11-4ada-809a-619cecec54a4 | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT SUM(order_amount) AS total_sales FROM fact_order
+2026-10-10 09:15:25.272 | INFO     | request_id - 2e31d4de-1e11-4ada-809a-619cecec54a4 | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT SUM(order_amount) AS total_sales FROM fact_order
+2026-10-10 09:15:25.280 | INFO     | request_id - 2e31d4de-1e11-4ada-809a-619cecec54a4 | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'total_sales': 279159.5}]
+2026-10-10 09:16:03.866 | INFO     | request_id - 25c3af6e-84d1-4489-b0b7-f3154968ac53 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询上个月总销售额', '销售额', '查询']
+2026-10-10 09:16:05.368 | INFO     | request_id - 25c3af6e-84d1-4489-b0b7-f3154968ac53 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-10-10 09:16:11.220 | INFO     | request_id - 25c3af6e-84d1-4489-b0b7-f3154968ac53 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['fact_order.order_amount', 'fact_order.order_quantity', 'fact_order.date_id', 'dim_date.date_id']
+2026-10-10 09:16:12.126 | INFO     | request_id - 25c3af6e-84d1-4489-b0b7-f3154968ac53 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-10-10 09:16:13.421 | INFO     | request_id - 25c3af6e-84d1-4489-b0b7-f3154968ac53 | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-10-10 09:16:16.168 | INFO     | request_id - 25c3af6e-84d1-4489-b0b7-f3154968ac53 | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['fact_order']
+2026-10-10 09:16:16.176 | INFO     | request_id - 25c3af6e-84d1-4489-b0b7-f3154968ac53 | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-10-10', 'weekday': 'Saturday', 'quarter': 'Q4'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-10-10 09:16:18.840 | INFO     | request_id - 25c3af6e-84d1-4489-b0b7-f3154968ac53 | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT SUM(order_amount) AS total_sales FROM fact_order WHERE date_id BETWEEN 20260901 AND 20260930;
+2026-10-10 09:16:18.844 | INFO     | request_id - 25c3af6e-84d1-4489-b0b7-f3154968ac53 | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT SUM(order_amount) AS total_sales FROM fact_order WHERE date_id BETWEEN 20260901 AND 20260930;
+2026-10-10 09:16:21.173 | INFO     | request_id - 25c3af6e-84d1-4489-b0b7-f3154968ac53 | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT SUM(order_amount) AS total_sales FROM fact_order WHERE date_id BETWEEN 20260901 AND 20260930;
+2026-10-10 09:16:21.177 | INFO     | request_id - 25c3af6e-84d1-4489-b0b7-f3154968ac53 | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'total_sales': None}]
+2026-10-10 09:19:26.857 | INFO     | request_id - 36c2a28b-0239-44e2-b096-a12139f907ec | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['查询', '查询上个月总销售额', '销售额']
+2026-10-10 09:19:30.122 | INFO     | request_id - 36c2a28b-0239-44e2-b096-a12139f907ec | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-10-10 09:19:33.381 | INFO     | request_id - 36c2a28b-0239-44e2-b096-a12139f907ec | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['fact_order.order_amount', 'fact_order.order_quantity', 'dim_date.month', 'dim_date.year']
+2026-10-10 09:19:35.797 | INFO     | request_id - 36c2a28b-0239-44e2-b096-a12139f907ec | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-10-10 09:19:37.091 | INFO     | request_id - 36c2a28b-0239-44e2-b096-a12139f907ec | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-10-10 09:19:38.946 | INFO     | request_id - 36c2a28b-0239-44e2-b096-a12139f907ec | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['fact_order', 'dim_date']
+2026-10-10 09:19:38.989 | INFO     | request_id - 36c2a28b-0239-44e2-b096-a12139f907ec | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-10-10', 'weekday': 'Saturday', 'quarter': 'Q4'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-10-10 09:19:41.748 | INFO     | request_id - 36c2a28b-0239-44e2-b096-a12139f907ec | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT SUM(fo.order_amount) AS GMV FROM fact_order fo JOIN dim_date dd ON fo.date_id = dd.date_id WHERE dd.year = 2026 AND dd.month = 9;
+2026-10-10 09:19:41.769 | INFO     | request_id - 36c2a28b-0239-44e2-b096-a12139f907ec | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT SUM(fo.order_amount) AS GMV FROM fact_order fo JOIN dim_date dd ON fo.date_id = dd.date_id WHERE dd.year = 2026 AND dd.month = 9;
+2026-10-10 09:19:43.223 | INFO     | request_id - 36c2a28b-0239-44e2-b096-a12139f907ec | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT SUM(fo.order_amount) AS GMV FROM fact_order fo JOIN dim_date dd ON fo.date_id = dd.date_id WHERE dd.year = 2026 AND dd.month = 9;
+2026-10-10 09:19:43.257 | INFO     | request_id - 36c2a28b-0239-44e2-b096-a12139f907ec | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'GMV': None}]
+2026-10-10 09:19:59.888 | INFO     | request_id - 832af132-d4eb-4b6b-a645-1d45a44420eb | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['2025 年 1 月 ~ 3 月']
+2026-10-10 09:20:01.787 | INFO     | request_id - 832af132-d4eb-4b6b-a645-1d45a44420eb | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['dim_date.date_id', 'fact_order.date_id', 'dim_date.day']
+2026-10-10 09:20:05.135 | INFO     | request_id - 832af132-d4eb-4b6b-a645-1d45a44420eb | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:[]
+2026-10-10 09:20:05.149 | INFO     | request_id - 832af132-d4eb-4b6b-a645-1d45a44420eb | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：['dim_date.quarter.Q1']
+2026-10-10 09:20:06.202 | INFO     | request_id - 832af132-d4eb-4b6b-a645-1d45a44420eb | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息[]
+2026-10-10 09:20:08.257 | INFO     | request_id - 832af132-d4eb-4b6b-a645-1d45a44420eb | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['dim_date', 'fact_order']
+2026-10-10 09:20:08.261 | INFO     | request_id - 832af132-d4eb-4b6b-a645-1d45a44420eb | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-10-10', 'weekday': 'Saturday', 'quarter': 'Q4'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-10-10 09:20:26.309 | INFO     | request_id - 832af132-d4eb-4b6b-a645-1d45a44420eb | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT date_id, COUNT(*) AS order_cnt FROM fact_order WHERE date_id BETWEEN 20250101 AND 20250331 GROUP BY date_id ORDER BY date_id;
+2026-10-10 09:20:26.313 | INFO     | request_id - 832af132-d4eb-4b6b-a645-1d45a44420eb | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT date_id, COUNT(*) AS order_cnt FROM fact_order WHERE date_id BETWEEN 20250101 AND 20250331 GROUP BY date_id ORDER BY date_id;
+2026-10-10 09:20:28.987 | INFO     | request_id - 832af132-d4eb-4b6b-a645-1d45a44420eb | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT date_id, COUNT(*) AS order_cnt FROM fact_order WHERE date_id BETWEEN 20250101 AND 20250331 GROUP BY date_id ORDER BY date_id;
+2026-10-10 09:20:29.017 | INFO     | request_id - 832af132-d4eb-4b6b-a645-1d45a44420eb | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'date_id': 20250101, 'order_cnt': 2}, {'date_id': 20250102, 'order_cnt': 2}, {'date_id': 20250103, 'order_cnt': 2}, {'date_id': 20250104, 'order_cnt': 1}, {'date_id': 20250105, 'order_cnt': 2}, {'date_id': 20250106, 'order_cnt': 1}, {'date_id': 20250107, 'order_cnt': 1}, {'date_id': 20250108, 'order_cnt': 2}, {'date_id': 20250109, 'order_cnt': 1}, {'date_id': 20250110, 'order_cnt': 2}, {'date_id': 20250111, 'order_cnt': 1}, {'date_id': 20250112, 'order_cnt': 1}, {'date_id': 20250113, 'order_cnt': 1}, {'date_id': 20250114, 'order_cnt': 1}, {'date_id': 20250115, 'order_cnt': 1}, {'date_id': 20250116, 'order_cnt': 1}, {'date_id': 20250117, 'order_cnt': 1}, {'date_id': 20250118, 'order_cnt': 1}, {'date_id': 20250119, 'order_cnt': 1}, {'date_id': 20250120, 'order_cnt': 2}, {'date_id': 20250121, 'order_cnt': 1}, {'date_id': 20250122, 'order_cnt': 1}, {'date_id': 20250123, 'order_cnt': 1}, {'date_id': 20250124, 'order_cnt': 1}, {'date_id': 20250125, 'order_cnt': 2}, {'date_id': 20250126, 'order_cnt': 1}, {'date_id': 20250127, 'order_cnt': 1}, {'date_id': 20250128, 'order_cnt': 1}, {'date_id': 20250129, 'order_cnt': 1}, {'date_id': 20250130, 'order_cnt': 2}, {'date_id': 20250131, 'order_cnt': 1}, {'date_id': 20250201, 'order_cnt': 1}, {'date_id': 20250202, 'order_cnt': 1}, {'date_id': 20250203, 'order_cnt': 1}, {'date_id': 20250204, 'order_cnt': 1}, {'date_id': 20250205, 'order_cnt': 2}, {'date_id': 20250206, 'order_cnt': 1}, {'date_id': 20250207, 'order_cnt': 1}, {'date_id': 20250208, 'order_cnt': 1}, {'date_id': 20250209, 'order_cnt': 1}, {'date_id': 20250210, 'order_cnt': 2}, {'date_id': 20250211, 'order_cnt': 1}, {'date_id': 20250212, 'order_cnt': 1}, {'date_id': 20250213, 'order_cnt': 1}, {'date_id': 20250214, 'order_cnt': 1}, {'date_id': 20250215, 'order_cnt': 2}, {'date_id': 20250216, 'order_cnt': 1}, {'date_id': 20250217, 'order_cnt': 1}, {'date_id': 20250218, 'order_cnt': 1}, {'date_id': 20250219, 'order_cnt': 1}, {'date_id': 20250220, 'order_cnt': 2}, {'date_id': 20250221, 'order_cnt': 1}, {'date_id': 20250222, 'order_cnt': 1}, {'date_id': 20250223, 'order_cnt': 1}, {'date_id': 20250224, 'order_cnt': 1}, {'date_id': 20250225, 'order_cnt': 1}, {'date_id': 20250226, 'order_cnt': 1}, {'date_id': 20250227, 'order_cnt': 1}, {'date_id': 20250228, 'order_cnt': 2}, {'date_id': 20250301, 'order_cnt': 2}, {'date_id': 20250302, 'order_cnt': 1}, {'date_id': 20250303, 'order_cnt': 1}, {'date_id': 20250304, 'order_cnt': 1}, {'date_id': 20250305, 'order_cnt': 2}, {'date_id': 20250306, 'order_cnt': 1}, {'date_id': 20250307, 'order_cnt': 1}, {'date_id': 20250308, 'order_cnt': 1}, {'date_id': 20250309, 'order_cnt': 1}, {'date_id': 20250310, 'order_cnt': 2}, {'date_id': 20250311, 'order_cnt': 1}, {'date_id': 20250312, 'order_cnt': 2}, {'date_id': 20250313, 'order_cnt': 1}, {'date_id': 20250314, 'order_cnt': 1}, {'date_id': 20250315, 'order_cnt': 2}, {'date_id': 20250316, 'order_cnt': 1}, {'date_id': 20250317, 'order_cnt': 1}, {'date_id': 20250318, 'order_cnt': 2}, {'date_id': 20250319, 'order_cnt': 1}, {'date_id': 20250320, 'order_cnt': 2}, {'date_id': 20250321, 'order_cnt': 1}, {'date_id': 20250322, 'order_cnt': 2}, {'date_id': 20250323, 'order_cnt': 1}, {'date_id': 20250324, 'order_cnt': 1}, {'date_id': 20250325, 'order_cnt': 2}, {'date_id': 20250326, 'order_cnt': 1}, {'date_id': 20250327, 'order_cnt': 1}, {'date_id': 20250328, 'order_cnt': 1}, {'date_id': 20250329, 'order_cnt': 2}, {'date_id': 20250330, 'order_cnt': 2}, {'date_id': 20250331, 'order_cnt': 1}]
+2026-10-10 09:21:01.087 | INFO     | request_id - 576566a5-20ca-4816-a6b3-d0583ba5081e | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['区域', '对比', '销量', '各区域销量对比']
+2026-10-10 09:21:05.877 | INFO     | request_id - 576566a5-20ca-4816-a6b3-d0583ba5081e | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['dim_date.date_id', 'fact_order.date_id', 'dim_date.day', 'dim_region.region_name', 'fact_order.region_id', 'dim_region.region_id', 'fact_order.order_quantity', 'dim_product.category', 'fact_order.order_amount']
+2026-10-10 09:21:06.627 | INFO     | request_id - 576566a5-20ca-4816-a6b3-d0583ba5081e | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-10-10 09:21:08.419 | INFO     | request_id - 576566a5-20ca-4816-a6b3-d0583ba5081e | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV', 'AOV']
+2026-10-10 09:21:09.759 | INFO     | request_id - 576566a5-20ca-4816-a6b3-d0583ba5081e | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息['GMV']
+2026-10-10 09:21:10.640 | INFO     | request_id - 576566a5-20ca-4816-a6b3-d0583ba5081e | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['fact_order', 'dim_region']
+2026-10-10 09:21:10.648 | INFO     | request_id - 576566a5-20ca-4816-a6b3-d0583ba5081e | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-10-10', 'weekday': 'Saturday', 'quarter': 'Q4'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-10-10 09:21:12.929 | INFO     | request_id - 576566a5-20ca-4816-a6b3-d0583ba5081e | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT 
+    r.region_name AS 区域,
+    SUM(f.order_quantity) AS 总销量
+FROM 
+    fact_order f
+JOIN 
+    dim_region r ON f.region_id = r.region_id
+GROUP BY 
+    r.region_name
+ORDER BY 
+    总销量 DESC;
+2026-10-10 09:21:12.936 | INFO     | request_id - 576566a5-20ca-4816-a6b3-d0583ba5081e | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT 
+    r.region_name AS 区域,
+    SUM(f.order_quantity) AS 总销量
+FROM 
+    fact_order f
+JOIN 
+    dim_region r ON f.region_id = r.region_id
+GROUP BY 
+    r.region_name
+ORDER BY 
+    总销量 DESC;
+2026-10-10 09:21:15.531 | INFO     | request_id - 576566a5-20ca-4816-a6b3-d0583ba5081e | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT 
+    r.region_name AS 区域,
+    SUM(f.order_quantity) AS 总销量
+FROM 
+    fact_order f
+JOIN 
+    dim_region r ON f.region_id = r.region_id
+GROUP BY 
+    r.region_name
+ORDER BY 
+    总销量 DESC;
+2026-10-10 09:21:15.565 | INFO     | request_id - 576566a5-20ca-4816-a6b3-d0583ba5081e | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'区域': '华东', '总销量': Decimal('235')}, {'区域': '华南', '总销量': Decimal('132')}, {'区域': '西南', '总销量': Decimal('90')}, {'区域': '华中', '总销量': Decimal('83')}, {'区域': '华北', '总销量': Decimal('82')}]
+2026-10-10 09:51:37.120 | INFO     | request_id - bc501261-3946-49a7-bc9f-84585d2b9b17 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['销量', '产品', '哪个产品销量最高', '最高']
+2026-10-10 09:51:45.455 | ERROR    | request_id - bc501261-3946-49a7-bc9f-84585d2b9b17 | app.agent.nodes.recall_metric:recall_metric:40 - 召回指标信息异常：Server error '502 Bad Gateway' for url 'http://localhost:8081'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-10-10 09:51:45.458 | ERROR    | request_id - bc501261-3946-49a7-bc9f-84585d2b9b17 | app.agent.nodes.recall_column:recall_column:43 - 召回字段信息异常Server error '502 Bad Gateway' for url 'http://localhost:8081'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-10-10 09:52:02.699 | INFO     | request_id - 55a4f6e8-796b-4f6d-9e83-55a2105822c3 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['销量', '产品', '哪个产品销量最高', '最高']
+2026-10-10 09:52:09.735 | ERROR    | request_id - 55a4f6e8-796b-4f6d-9e83-55a2105822c3 | app.agent.nodes.recall_metric:recall_metric:40 - 召回指标信息异常：Server error '502 Bad Gateway' for url 'http://localhost:8081'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-10-10 10:02:01.984 | INFO     | request_id - 95cd3adb-ba5a-49ae-92bf-3ce03683e012 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['销量', '产品', '哪个产品销量最高', '最高']
+2026-10-10 10:02:08.204 | INFO     | request_id - 95cd3adb-ba5a-49ae-92bf-3ce03683e012 | app.agent.nodes.recall_value:recall_value:37 - 召回字段取值：[]
+2026-10-10 10:02:37.965 | INFO     | request_id - 95cd3adb-ba5a-49ae-92bf-3ce03683e012 | app.agent.nodes.recall_column:recall_column:40 - 召回字段信息：['dim_product.product_name', 'dim_product.brand', 'dim_product.category', 'dim_product.product_id', 'fact_order.product_id', 'fact_order.order_quantity', 'fact_order.order_amount']
+2026-10-10 10:02:39.638 | INFO     | request_id - 95cd3adb-ba5a-49ae-92bf-3ce03683e012 | app.agent.nodes.recall_metric:recall_metric:37 - 召回指标信息:['GMV']
+2026-10-10 10:02:42.750 | INFO     | request_id - 95cd3adb-ba5a-49ae-92bf-3ce03683e012 | app.agent.nodes.filter_table:filter_table:38 - 过滤后的表信息['dim_product', 'fact_order']
+2026-10-10 10:02:46.083 | INFO     | request_id - 95cd3adb-ba5a-49ae-92bf-3ce03683e012 | app.agent.nodes.filter_metric:filter_metric:33 - 过滤后的表信息[]
+2026-10-10 10:02:46.119 | INFO     | request_id - 95cd3adb-ba5a-49ae-92bf-3ce03683e012 | app.agent.nodes.add_extra_context:add_extra_context:23 - 额外上下文信息添加，日期信息{'date': '2026-10-10', 'weekday': 'Saturday', 'quarter': 'Q4'},数据库信息{'version': '8.0.46', 'dialect': 'mysql'}
+2026-10-10 10:02:49.058 | INFO     | request_id - 95cd3adb-ba5a-49ae-92bf-3ce03683e012 | app.agent.nodes.generate_sql:generate_sql:35 - 生成的sql语句
+:SELECT p.product_name, SUM(f.order_quantity) AS total_quantity FROM fact_order f JOIN dim_product p ON f.product_id = p.product_id GROUP BY p.product_name ORDER BY total_quantity DESC LIMIT 1;
+2026-10-10 10:02:49.079 | INFO     | request_id - 95cd3adb-ba5a-49ae-92bf-3ce03683e012 | app.agent.nodes.validate_sql:validate_sql:23 - sql验证失败:SELECT p.product_name, SUM(f.order_quantity) AS total_quantity FROM fact_order f JOIN dim_product p ON f.product_id = p.product_id GROUP BY p.product_name ORDER BY total_quantity DESC LIMIT 1;
+2026-10-10 10:02:50.699 | INFO     | request_id - 95cd3adb-ba5a-49ae-92bf-3ce03683e012 | app.agent.nodes.correct_sql:correct_sql:42 - 校验生成的正确sql语句
+SELECT p.product_name, SUM(f.order_quantity) AS total_quantity FROM fact_order f JOIN dim_product p ON f.product_id = p.product_id GROUP BY p.product_name ORDER BY total_quantity DESC LIMIT 1;
+2026-10-10 10:02:50.772 | INFO     | request_id - 95cd3adb-ba5a-49ae-92bf-3ce03683e012 | app.agent.nodes.execute_sql:execute_sql:14 - 执行sql的结果[{'product_name': '蒙牛纯牛奶 250ml*12', 'total_quantity': Decimal('183')}]
+2026-10-10 10:05:47.286 | INFO     | request_id - b160802d-176a-4af2-81c4-9ea3f6d3a0ad | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['最高', '哪个产品销量最高', '销量', '产品']
+2026-10-10 10:05:55.866 | ERROR    | request_id - b160802d-176a-4af2-81c4-9ea3f6d3a0ad | app.agent.nodes.recall_column:recall_column:43 - 召回字段信息异常Server error '502 Bad Gateway' for url 'http://localhost:8081'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-10-10 10:06:00.478 | INFO     | request_id - 10129880-a5fe-4e07-9151-99c8479c3124 | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['最高', '哪个产品销量最高', '销量', '产品']
+2026-10-10 10:06:06.701 | ERROR    | request_id - 10129880-a5fe-4e07-9151-99c8479c3124 | app.agent.nodes.recall_column:recall_column:43 - 召回字段信息异常Server error '502 Bad Gateway' for url 'http://localhost:8081'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-10-10 10:07:11.362 | INFO     | request_id - b5f6949a-93b5-4a4d-8486-e9015e91e97d | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['最高', '哪个产品销量最高', '销量', '产品']
+2026-10-10 10:07:12.403 | ERROR    | request_id - b5f6949a-93b5-4a4d-8486-e9015e91e97d | app.agent.nodes.recall_column:recall_column:43 - 召回字段信息异常Server error '502 Bad Gateway' for url 'http://localhost:8081'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-10-10 10:08:50.715 | INFO     | request_id - 279ef7cd-8a5a-4e92-a592-750af499ce2a | app.agent.nodes.extract_keywords:extract_keywords:28 - 抽取关键字:['最高', '产品', '销量', '哪个产品销量最高']
+2026-10-10 10:08:54.421 | ERROR    | request_id - 279ef7cd-8a5a-4e92-a592-750af499ce2a | app.agent.nodes.recall_column:recall_column:43 - 召回字段信息异常Server error '502 Bad Gateway' for url 'http://localhost:8081'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
+2026-10-10 10:08:54.452 | ERROR    | request_id - 279ef7cd-8a5a-4e92-a592-750af499ce2a | app.agent.nodes.recall_metric:recall_metric:40 - 召回指标信息异常：Server error '502 Bad Gateway' for url 'http://localhost:8081'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/502
